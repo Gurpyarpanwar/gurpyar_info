@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class Getters {
   Getters._();
+  static final navigatorKey = GlobalKey<NavigatorState>();
 
   static EdgeInsetsGeometry get homePagePadding =>
       const EdgeInsets.symmetric(horizontal: 20.0);

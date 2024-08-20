@@ -3,7 +3,9 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gurpyar_info/uitls/all_getter.dart';
+import 'package:gurpyar_info/uitls/device_type.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 part 'widgets/app_colors.dart';
 part 'widgets/app_text.dart';

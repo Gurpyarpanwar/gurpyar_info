@@ -44,6 +44,7 @@ void toast({required String msg, bool isError = true}) {
                       xWidth(10),
                       Flexible(
                         child: AppText(
+                          context: Getters.navigatorKey.currentContext!,
                           text: msg,
                           textAlign: TextAlign.center,
                           fontSize: 15,

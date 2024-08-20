@@ -73,7 +73,7 @@ class _BtnState extends State<Btn> {
                 width: widget.borderWidth ?? 0)),
         child: Padding(
           padding: widget.customPadding ??
-              EdgeInsets.all(widget.textPadding ?? 18.0),
+              EdgeInsets.all(widget.textPadding ?? 10),
           child: Center(
             child: (widget.loading ?? false)
                 ? customLoader(
@@ -83,9 +83,10 @@ class _BtnState extends State<Btn> {
                 : (widget.child != null)
                     ? (widget.child)
                     : AppText(
+              context: context,
                         text: (widget.title ?? ""),
                         fontWeight: widget.fontWeight??FontWeight.w500,
-                        fontSize: widget.fontSize??16.5,
+                        fontSize: CustomDeviceType.getSmallText(context),
                         fontFamily: widget.fontFamily??AppString.fontFamily,
                         color: widget.textColor ?? AppColor.whiteFFFFFF,
                       ),

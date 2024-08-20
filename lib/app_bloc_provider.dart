@@ -13,6 +13,7 @@ class AppBlocProvider extends StatelessWidget {
       providers: [
         /// toggle blocs
         BlocProvider(create: (context) => AnimatedContainerToggleBloc()),
+        BlocProvider(create: (context) => SelectedTab()),
 
       ],
       child: child,

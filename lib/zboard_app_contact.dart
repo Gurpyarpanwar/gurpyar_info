@@ -13,28 +13,22 @@ class _OnBoardAppContactState extends State<OnBoardAppContact> {
   @override
   Widget build(BuildContext context) {
     return AppBlocProvider(
-      child: ScreenUtilInit(
-          designSize: Size(375, 812),
-          // Set the design size (width, height) based on your design mockup
-          minTextAdapt: true,
-          // If true, it will adapt the minimum font size
-          splitScreenMode: true,
-          // If true, it will enable split screen support
+      child: ResponsiveSizer(builder: (context, orientation, screenType) {
+        return MaterialApp(
+          navigatorKey: Getters.navigatorKey,
+          debugShowCheckedModeBanner: false,
+          title: 'Gurpyar Info',
+          theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+          home: SplashScreen(),
           builder: (context, child) {
-            return MaterialApp(
-              // navigatorKey: Getters.navKey,todo:: add navigator key
-              debugShowCheckedModeBanner: false,
-              title: 'Gurpyar Info',
-              home: Dashboard(),
-              builder: (context, child) {
-                child = botToastBuilder(context, child);
-                return MediaQuery(
-                    data: MediaQuery.of(context)
-                        .copyWith(textScaler: const TextScaler.linear(1.0)),
-                    child: child);
-              },
-            );
-          }),
+            child = botToastBuilder(context, child);
+            return MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
+                child: child);
+          },
+        );
+      }),
     );
   }
 }

@@ -9,7 +9,8 @@ class AppText extends StatelessWidget {
   final AppTextStyle? style;
   final bool? underline;
   final bool? strikeThrough;
-  final double fontSize;
+  final double? fontSize;
+  final BuildContext context;
   final bool? capitalise;
   final int? maxlines;
   final TextAlign? textAlign;
@@ -28,7 +29,7 @@ class AppText extends StatelessWidget {
       this.maxlines,
       this.textAlign,
       this.underline,
-      this.fontSize = 10,
+      this.fontSize,
       this.fontFamily,
       this.fontWeight,
       this.lineHeight,
@@ -37,7 +38,7 @@ class AppText extends StatelessWidget {
       this.strikeThrough,
       this.capitalise,
       this.letterSpacing,
-      this.overflow});
+      this.overflow, required this.context});
 
   @override
   Widget build(BuildContext context) {
@@ -48,20 +49,21 @@ class AppText extends StatelessWidget {
       maxLines: maxlines,
       overflow: maxlines != null ? TextOverflow.ellipsis : null,
       textAlign: textAlign,
-      style: getStyle(color ?? AppColor.black000000, fontSize),
+      style: getStyle(color ?? AppColor.black000000, fontSize,context),
     );
   }
 
   TextStyle getStyle(
     Color color,
-    double textSize,
+    double? textSize,
+    BuildContext context,
   ) {
     return TextStyle(
         overflow: overflow,
         color: color,
         letterSpacing: letterSpacing,
         fontWeight: fontWeight ?? FontWeight.w500,
-        fontSize: textSize.sp,
+        fontSize: textSize??CustomDeviceType.getMediumText(context),
         fontStyle: fontStyle ?? FontStyle.normal,
         height: lineHeight ?? 1.0,
         fontFamily: fontFamily ?? AppString.fontFamily,

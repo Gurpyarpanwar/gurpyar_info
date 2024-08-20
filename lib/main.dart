@@ -4,9 +4,11 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gurpyar_info/app_bloc_provider.dart';
 import 'package:gurpyar_info/ui/dashboard/dashboard.dart';
+import 'package:gurpyar_info/ui/splash_screen.dart';
+import 'package:gurpyar_info/uitls/all_getter.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 part 'zboard_app_contact.dart';
 
