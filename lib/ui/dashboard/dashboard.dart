@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gurpyar_info/uitls/assets.dart';
 import 'package:gurpyar_info/uitls/device_type.dart';
 import 'package:gurpyar_info/uitls/helpers.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../blocs/toggle_blocs/auth_toggle_blocs.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 part 'app_bar.dart';
-
+part '../Home/home_screen.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
@@ -22,10 +24,25 @@ class Dashboard extends StatelessWidget {
               selectedScreenPart: state,
             ),
           ),
-          body: AppText(
-            text: "ffffffff",
-            context: context,
-            fontSize: CustomDeviceType.getLargeText(context),
+          body: Container(
+            height: double.infinity,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(Assets.backgroundImage),
+                fit: BoxFit.cover
+              )
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  yHeight(50),
+                  const HomeScreen(),
+
+                ],
+              ),
+            ),
           ),
         );
       },

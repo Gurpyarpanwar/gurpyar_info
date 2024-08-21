@@ -12,4 +12,9 @@ class Assets {
   }
 
     static const String welcome = 'assets/images/welcome.jpg';
+    static const String protocolImage = 'assets/images/protocol_image.svg';
+    static const String facebookIcon = 'assets/images/fb.svg';
+    static const String instagramLogo = 'assets/images/insta.svg';
+    static const String whatsappIcon = 'assets/images/Whts-App.svg';
+    static const String backgroundImage = 'assets/images/background_imgae.png';
 }
