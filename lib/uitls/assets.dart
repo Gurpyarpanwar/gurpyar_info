@@ -17,4 +17,9 @@ class Assets {
     static const String instagramLogo = 'assets/images/insta.svg';
     static const String whatsappIcon = 'assets/images/Whts-App.svg';
     static const String backgroundImage = 'assets/images/background_imgae.png';
+    static const String cPlain = 'assets/images/c-plain.svg';
+    static const String dartOriginal = 'assets/images/dart-original.svg';
+    static const String firebaseIcon = 'assets/images/firebase-icon.svg';
+    static const String flutterPlain = 'assets/images/flutter-plain.svg';
+    static const String gitPlain = 'assets/images/git-plain.svg';
 }

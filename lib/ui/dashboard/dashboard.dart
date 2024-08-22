@@ -8,8 +8,14 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../blocs/toggle_blocs/auth_toggle_blocs.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+
 part 'app_bar.dart';
-part '../Home/home_screen.dart';
+
+part '../home_screen.dart';
+
+part '../about_me.dart';
+part '../custom_skill_box.dart';
+
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
@@ -24,24 +30,19 @@ class Dashboard extends StatelessWidget {
               selectedScreenPart: state,
             ),
           ),
-          body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(Assets.backgroundImage),
-                fit: BoxFit.cover
-              )
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  yHeight(50),
-                  const HomeScreen(),
-
-                ],
-              ),
+          body: const SingleChildScrollView(
+            child: Column(
+              children: [
+                HomeScreen(),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      AboutMe(),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         );

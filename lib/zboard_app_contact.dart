@@ -19,7 +19,7 @@ class _OnBoardAppContactState extends State<OnBoardAppContact> {
           debugShowCheckedModeBanner: false,
           title: 'Gurpyar Info',
           theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-          home: SplashScreen(),
+          home: Dashboard(),
           builder: (context, child) {
             child = botToastBuilder(context, child);
             return MediaQuery(
